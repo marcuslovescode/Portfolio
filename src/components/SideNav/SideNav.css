@@ -1,0 +1,84 @@
+#side-nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: center;
+  justify-content: center;
+  height: 50vh;
+  z-index: 5;
+}
+
+.side-nav-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.side-nav-page h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(calc(-100% - 10px), calc(-50% + 7px));
+  font-size: 18px;
+  opacity: 0;
+  z-index: -10;
+  font-weight: thin;
+  transition: opacity 0.5s;
+  white-space: nowrap;
+
+}
+
+.side-nav-page:hover h3 {
+  opacity: 0;
+  z-index: 0;
+}
+
+.side-nav-page .side-nav-bubble {
+  border: 7px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 0;
+  transition: padding 0.5s, border 0.5s;
+  cursor: pointer;
+}
+
+.side-nav-page .side-nav-bubble:hover {
+  padding: 6px;
+  border: 1px solid black;
+}
+
+.side-nav-page.active-page .side-nav-bubble {
+  border: 1px solid black;
+  padding: 6px;
+}
+
+.side-nav-line {
+  display: inline-block;
+  margin: 10px 0;
+  width: 1px;
+  height: calc((50vh - 190px) / 4);
+  background-color: black;
+}
+
+#side-nav-current-page {
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 20px;
+  width: 2ch;
+}
+
+@media only screen and (max-width: 800px) {
+
+  #side-nav {
+    right: 10px;
+  }
+
+}
